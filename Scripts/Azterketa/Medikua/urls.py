@@ -10,6 +10,9 @@ urlpatterns = [
  path('medikua/list/<int:kod_medikua>/', views.medikua_ezabatu, name='medikua-ezabatu' ),
  path('zitak/new/', views.zita_new, name='zita-berria'),
  path('zitak/list/', views.zitak_list, name='zitak-zerrenda'),
-  path('pazientea/editatu/<int:kod_pazientea>/', views.pazientea_editatu, name='pazientea-aldatu' ),
-   path('pazientea/list/<int:kod_pazientea>/', views.pazientea_ezabatu, name='pazientea-ezabatu' ),
+ path('pazientea/editatu/<int:kod_pazientea>/', views.pazientea_editatu, name='pazientea-aldatu' ),
+ path('pazientea/list/<int:kod_pazientea>/', views.pazientea_ezabatu, name='pazientea-ezabatu' ),
+ path('zitak/editatu/<int:kod_pazientea>/<int:kod_mediku>/', views.zita_editatu, name='zita-editatu'),
+ path('zitak/list/<int:kod_pazientea>/<int:kod_mediku>/', views.zita_ezabatu, name='zita-ezabatu'),
+
 ]

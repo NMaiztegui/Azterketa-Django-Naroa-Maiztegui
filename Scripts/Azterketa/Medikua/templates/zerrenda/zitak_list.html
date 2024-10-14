@@ -16,6 +16,14 @@
             <td>{{zita.pazientea}}</td>
             <td>{{zita.mediku}}</td>
             <td>{{zita.ordua}}</td>
+            <td> <a href="{% url 'zita-editatu' zita.pazientea.id zita.mediku.id  %}"><button> Editatu</button></a></td>
+            <td>
+                <form method="post" action="{% url 'zita-ezabatu' zita.pazientea.id zita.mediku.id  %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar esta zita?');">Ezabatu</button>
+                </form>
+            </td>
+           
            
            
             
