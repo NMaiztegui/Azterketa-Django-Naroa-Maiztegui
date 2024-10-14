@@ -20,6 +20,7 @@ class Pazientea(models.Model):
         return f'{self.izena}-{self.abizena}-{self.dni}'
 
 class Zitak(models.Model):
+    
     mediku=models.ForeignKey(Medikua,on_delete=models.CASCADE)
     pazientea=models.ForeignKey(Pazientea, on_delete=models.CASCADE)
     ordua=models.DateTimeField(default=timezone.now)
