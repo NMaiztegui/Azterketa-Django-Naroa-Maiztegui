@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<table class="table table-striped table-hover table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Izena</th>
+            <th>Abizena</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for medikua in medikuak %}
+        <tr>
+            <td>{{medikua.izena}}</td>
+            <td>{{medikua.abizena}}</td>
+            <td> <a href="{% url 'medikua-aldatu' medikua.id  %}"><button> Aldatu</button></a></td>
+            <td>
+                <form method="post" action="{% url 'medikua-ezabatu' medikua.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este medico?');">Ezabatu</button>
+                </form>
+            </td>
+       
+           
+           
+            
+        </tr>
+       
+        
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
