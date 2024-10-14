@@ -6,6 +6,7 @@ class Medikua(models.Model):
     id=models.AutoField(primary_key=True)
     izena=models.CharField(max_length=100)
     abizena=models.CharField(max_length=100)
+    
 
     def __str__(self):
         return f'{self.izena}-{self.abizena}'

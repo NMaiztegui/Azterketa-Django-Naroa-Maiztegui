@@ -16,6 +16,13 @@
             <td>{{pazientea.izena}}</td>
             <td>{{pazientea.abizena}}</td>
             <td>{{pazientea.dni}}</td>
+            <td> <a href="{% url 'pazientea-aldatu' pazientea.id  %}"><button> Editatu</button></a></td>
+            <td>
+                <form method="post" action="{% url 'pazientea-ezabatu' pazientea.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este paciente?');">Ezabatu</button>
+                </form>
+            </td>
            
            
             

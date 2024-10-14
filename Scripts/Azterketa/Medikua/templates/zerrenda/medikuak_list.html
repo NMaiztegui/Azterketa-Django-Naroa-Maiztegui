@@ -14,7 +14,7 @@
         <tr>
             <td>{{medikua.izena}}</td>
             <td>{{medikua.abizena}}</td>
-            <td> <a href="{% url 'medikua-aldatu' medikua.id  %}"><button> Aldatu</button></a></td>
+            <td> <a href="{% url 'medikua-aldatu' medikua.id  %}"><button> Editatu</button></a></td>
             <td>
                 <form method="post" action="{% url 'medikua-ezabatu' medikua.id %}" style="display:inline;">
                     {% csrf_token %}

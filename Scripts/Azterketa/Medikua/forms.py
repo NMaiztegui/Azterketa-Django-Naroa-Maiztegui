@@ -20,4 +20,15 @@ class MedikuaAldatuForm(forms.ModelForm):
     class Meta:
         model=Medikua
         fields=['izena','abizena']
+
+class PazienteaEditatu(forms.ModelForm):
+    class Meta:
+        model=Pazientea
+        fields=['izena','abizena','dni']
     
+    def __init__(self, *args, **kwargs):
+        super(PazienteaEditatu,self).__init__(*args, **kwargs)
+        if self.instance:
+         
+          self.fields['dni'].disabled = True 
+         
