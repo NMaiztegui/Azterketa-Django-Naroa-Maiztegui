@@ -67,11 +67,11 @@ def zita_new(request):
             #comprobar si existe una cita igual para el paciente
 
             cita_exits=Zitak.objects.filter(
-                    Q(pazientea=paziente) & Q(mediku=medikua) &  Q(ordua=ordu)
+                    Q(pazientea=paziente) & Q(mediku=medikua) 
             ).exists()
 
             if cita_exits:
-                form.add_error('ordua', 'Pazienteak ba du cita bat mediku honekin ordu berdinean, ordua edo medikua aldatu.')
+                form.add_error('ordua', 'Pazienteak ba du cita bat mediku honekin ordu berdinean,  medikua aldatu.')
             else:
                 form.save()
                 return redirect('zitak-zerrenda')

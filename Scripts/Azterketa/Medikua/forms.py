@@ -15,7 +15,9 @@ class ZitakForms(forms.ModelForm):
     class Meta:
         model=Zitak
         fields=['mediku','pazientea','ordua']
-        
+    
+    
+
 
 class MedikuaAldatuForm(forms.ModelForm):
     class Meta:
